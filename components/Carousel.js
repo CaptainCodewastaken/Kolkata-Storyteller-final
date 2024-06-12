@@ -33,7 +33,8 @@ const Carousel = () => {
           alt={images[currentIndex].alt}
           layout="fill"
           objectFit="cover"
-          className="rounded-lg shadow-md"
+          // Remove rounded corners here
+          className="shadow-md"
         />
       </div>
       <button onClick={nextImage} className="absolute right-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-300 transition duration-300 ease-in-out z-10">
