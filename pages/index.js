@@ -5,18 +5,22 @@ import Footer from '../components/Footer';
 import Stories from '../components/Stories';
 import clientPromise from '../lib/mongodb';
 import Carousel from '@/components/Carousel';
-
+import { useSession } from 'next-auth/react';
 
 export default function Home({ stories }) {
-
+  const { data: session } = useSession();
 
   return (
-    <div className="bg-gray-900 min-h-screen text-white">
+    <div>
       <Navbar />
-      <div className="container mx-auto px-4 py-8">
-        <Carousel />
-        <Stories/>
-      </div>
+      <Carousel />
+      {session ? (
+        <Stories stories={stories} />
+      ) : (
+        <div className="container mx-auto mt-4 text-center">
+          <p className="text-lg text-black-700">Login to view the latest stories.</p>
+        </div>
+      )}
       <Footer />
     </div>
   );
@@ -32,5 +36,3 @@ export async function getServerSideProps() {
     },
   };
 }
-
-
