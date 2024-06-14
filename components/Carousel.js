@@ -23,9 +23,9 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full h-[500px] bg-gray-200 flex items-center justify-center">
-      <button onClick={prevImage} className="absolute left-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-300 transition duration-300 ease-in-out z-10">
-        <FaArrowLeft size={20} />
+    <div className="relative w-full h-[500px] md:h-[500px] bg-gray-200 flex items-center justify-center">
+      <button onClick={prevImage} className="absolute left-4 sm:left-8 md:left-12 bg-white rounded-full p-2 shadow-md hover:bg-gray-300 transition duration-300 ease-in-out z-10">
+        <FaArrowLeft size={20} className="text-black" />
       </button>
       <div className="relative w-full h-full">
         <Image
@@ -33,12 +33,11 @@ const Carousel = () => {
           alt={images[currentIndex].alt}
           layout="fill"
           objectFit="cover"
-          // Remove rounded corners here
           className="shadow-md"
         />
       </div>
-      <button onClick={nextImage} className="absolute right-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-300 transition duration-300 ease-in-out z-10">
-        <FaArrowRight size={20} />
+      <button onClick={nextImage} className="absolute right-4 sm:right-8 md:right-12 bg-white rounded-full p-2 shadow-md hover:bg-gray-300 transition duration-300 ease-in-out z-10">
+        <FaArrowRight size={20} className="text-black" />
       </button>
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
         {images.map((_, index) => (

@@ -16,7 +16,7 @@ const Stories = () => {
   return (
     <div className="bg-gray-900 text-white min-h-screen relative overflow-hidden">
       <div className="container mx-auto p-4">
-        <h2 className="text-2xl font-bold mb-4">Latest Stories</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center md:text-left">Latest Stories</h2>
         <div className="space-y-6">
           {stories.map((story) => (
             <div key={story._id} className="relative">
