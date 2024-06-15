@@ -14,10 +14,10 @@ const Footer = () => {
 
       {/* Social media icons */}
       <div className="flex justify-center space-x-6 md:space-x-12">
-        <a href="https://x.com/kolkatacreator" className="text-white hover:text-gray-300">
+        <a href="#" className="text-white hover:text-gray-300">
           <FontAwesomeIcon icon={faTwitter} className="text-3xl" />
         </a>
-        <a href="https://www.facebook.com/profile.php?id=61560994863550" className="text-white hover:text-gray-300">
+        <a href="#" className="text-white hover:text-gray-300">
           <FontAwesomeIcon icon={faFacebook} className="text-3xl" />
         </a>
         <a href="#" className="text-white hover:text-gray-300">
