@@ -1,52 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import vicmem from '@/public/image/victoriamemorial.jpg';
-import fw from '@/public/image/fortwilliam.jpg';
-import hb from '@/public/image/howrahbridge.jpg';
-
-const images = [
-  { src: hb, alt: 'Howrah Bridge' },
-  { src: vicmem, alt: 'Victoria Memorial' },
-  { src: fw, alt: 'Fort William' }
-];
+import heroimg from '@/public/image/heroimage.png'; // Adjust path as necessary
 
 const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const prevImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
-
-  const nextImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
   return (
-    <div className="relative w-full h-[500px] md:h-[500px] bg-gray-200 flex items-center justify-center">
-      <button onClick={prevImage} className="absolute left-4 sm:left-8 md:left-12 bg-white rounded-full p-2 shadow-md hover:bg-gray-300 transition duration-300 ease-in-out z-10">
-        <FaArrowLeft size={20} className="text-black" />
-      </button>
-      <div className="relative w-full h-full">
-        <Image
-          src={images[currentIndex].src}
-          alt={images[currentIndex].alt}
-          layout="fill"
-          objectFit="cover"
-          className="shadow-md"
-        />
-      </div>
-      <button onClick={nextImage} className="absolute right-4 sm:right-8 md:right-12 bg-white rounded-full p-2 shadow-md hover:bg-gray-300 transition duration-300 ease-in-out z-10">
-        <FaArrowRight size={20} className="text-black" />
-      </button>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-        {images.map((_, index) => (
-          <div
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer ${index === currentIndex ? 'bg-white' : 'bg-gray-400'} transition-colors duration-300 ease-in-out`}
-          ></div>
-        ))}
+    <div className="relative h-screen">
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative w-full h-full overflow-hidden border-8 border-white">
+          <Image src={heroimg} alt="Hero Image" layout="fill" objectFit="cover" />
+          <div className="bg-black bg-opacity-50 absolute inset-0 flex flex-col items-center justify-center text-white text-center">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 heading">
+              <div className="pb-20">
+                <h1 className="text-5xl font-bold headingtext font-akzidenz">KOLKATA STORYTELLER</h1>
+              </div>
+              <div className="p-4">
+                <p className="text-2xl quotetext font-gt-sectra">Unravelling the soul of Kolkata through candid & heartfelt conversations with its people.</p>
+              </div>
+            </div>
+          </div>
+          <div className="absolute inset-6 bg-white opacity-0"></div> {/* Padding for thicker border effect */}
+        </div>
       </div>
     </div>
   );

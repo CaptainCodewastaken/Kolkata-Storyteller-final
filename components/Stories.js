@@ -14,9 +14,12 @@ const Stories = () => {
   }, []);
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen relative overflow-hidden">
-      <div className="container mx-auto p-4">
-        <h2 className="text-2xl font-bold mb-4 text-center md:text-left">Latest Stories</h2>
+    <div id="storyheading"className="bg-[#FFFFFF] text-white min-h-screen relative overflow-hidden">
+      <div className="container mx-auto p-4 my-10">
+        <div className='storyheading text-center'>
+          <p className='text-xl text-black'>KOLKATA STORYTELLERS</p>
+          <p className="text-5xl  text-black font-semibold">LATEST STORIES</p>
+        </div>
         <div className="space-y-6">
           {stories.map((story) => (
             <div key={story._id} className="relative">
