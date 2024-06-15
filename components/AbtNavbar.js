@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link as ScrollLink } from "react-scroll";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -7,7 +6,7 @@ import Image from "next/image";
 import navlogo from '@/public/image/logofinal.jpg';
 import Link from "next/link";
 
-const Navbar = () => {
+const AbtNavbar = () => {
   const router = useRouter();
   const [showSidebar, setShowSidebar] = useState(false);
 
@@ -16,10 +15,8 @@ const Navbar = () => {
   };
 
   const handleStoryClick = () => {
-    if (router.pathname === "/") {
-      // Scroll to "storyheading" on Home page
-      window.scrollTo({ top: document.getElementById("storyheading").offsetTop, behavior: "smooth" });
-    }
+    // Navigate to home page regardless of current page
+    router.push("/");
   };
 
   return (
@@ -78,4 +75,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default AbtNavbar;

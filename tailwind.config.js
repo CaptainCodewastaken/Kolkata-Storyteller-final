@@ -15,6 +15,7 @@ module.exports = {
       fontFamily: {
         'akzidenz': ['"Akzidenz Grotesque BQ"', 'sans-serif'],
         'gt-sectra': ['"GT Sectra Display"', 'serif'],
+        'merriweather': ['Merriweather', 'serif'], // Add Merriweather font family
       },
       fontSize: {
         'custom': '20px',
