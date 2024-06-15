@@ -18,6 +18,9 @@ const About = () => {
           <p className="text-lg leading-relaxed mb-6">
             Join and support us as we celebrate the spirit of Kolkata, one story at a time.
           </p>
+          <p className="text-lg leading-relaxed mb-6">
+            Share your stories at creators@kolkatastoryteller.com
+          </p>
         </div>
       </div>
       <Footer />
